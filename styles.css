@@ -1,0 +1,294 @@
+/* Global styles for Tutor4AI website */
+/* Define color palette */
+:root {
+  --primary: #0a193d;          /* dark blue for headers */
+  --secondary: #2b4865;        /* secondary dark shade */
+  --accent: #576f9e;           /* accent color for buttons */
+  --light-bg: #f5f7fb;         /* light background for sections */
+  --text-color: #333333;       /* primary text color */
+  --muted: #666666;            /* secondary text color */
+  --card-bg: #ffffff;          /* card background */
+  --border-radius: 8px;        /* consistent card rounding */
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--text-color);
+  background-color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Containers constrain width and center content */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header and navigation */
+header {
+  background-color: var(--primary);
+  color: #ffffff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 70px; /* offset for fixed header */
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 61, 0.5);
+  z-index: -1;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary);
+}
+
+/* Section styling */
+.section {
+  padding: 4rem 0;
+}
+
+.section.alt {
+  background-color: var(--light-bg);
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: var(--muted);
+}
+
+/* Tools grid */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.tool-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tool-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.tool-card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.tool-card a {
+  align-self: flex-start;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.tool-card a:hover {
+  border-color: var(--accent);
+}
+
+/* Blog section */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.blog-content p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.read-more {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.read-more:hover {
+  border-color: var(--accent);
+}
+
+/* Contact section */
+#contact p {
+  font-size: 1rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+#contact a:hover {
+  border-color: var(--accent);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer .small-text {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}
